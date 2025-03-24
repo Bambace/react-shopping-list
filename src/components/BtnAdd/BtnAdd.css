@@ -1,0 +1,16 @@
+.add{
+   font-size: 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    border-radius: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+
+.add:hover{
+    background-color: #007BFF;
+}

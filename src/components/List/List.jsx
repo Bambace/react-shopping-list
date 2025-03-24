@@ -8,11 +8,15 @@ import BtnConfirm from '../BtnConfirm/BtnConfirm'
     
          <ul>
              {shoppingList.map(item=>(
-               <div key={item.id} className={selectedItemId.includes(item.id) ?  "selezionato" : ""}  >
+               <div key={item.id} className={`list-item ${selectedItemId.includes(item.id) ?  "selezionato" : ""} ` }>
                  <li >{item.list}
-                  <BtnConfirm item={item.id} setSelectedItemId={setSelectedItemId}  selectedItemId={selectedItemId} toggleItemSelection={toggleItemSelection}/> 
+                  <div className='button-group'>
+                  <BtnConfirm  item={item.id} setSelectedItemId={setSelectedItemId}  selectedItemId={selectedItemId} toggleItemSelection={toggleItemSelection}/> 
 
-                  <BtnRemove onClickRemove={onClickRemove} item={item.id} /> </li>
+                  <BtnRemove onClickRemove={onClickRemove} item={item.id} /> 
+                  </div>
+                  </li>
+                  
                   </div>
              ))}
          </ul>

@@ -1,4 +1,12 @@
 #root {
- 
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ justify-content: center;
+ background-color: #F5F5F5; 
 }
 
+
+
+
+  

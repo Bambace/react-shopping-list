@@ -1,9 +1,10 @@
 import { IoMdAddCircle } from "react-icons/io";
+import './BtnAdd.css'
 export default function BtnAdd({handleClick}) {
   return (
     <>
 
-    <button onClick={handleClick}>   <IoMdAddCircle  /></button>
+    <button className="add" onClick={handleClick}>   <IoMdAddCircle  /></button>
     </>
   );
 }

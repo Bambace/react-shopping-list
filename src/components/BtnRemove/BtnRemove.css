@@ -1,0 +1,13 @@
+.remove{
+    display: flex;
+    flex-direction: row;
+    font-size: 35px;
+    background-color: black ;
+    color: white;
+    border-radius: 14px;
+}
+
+.remove:hover{
+    background-color:#FF4C4C ;
+    color:white
+}
