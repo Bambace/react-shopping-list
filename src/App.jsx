@@ -8,11 +8,23 @@ import Input from "./components/Input/Input";
 function App() {
   const [shoppingList, setShoppinglist] = useState([]);
   const [inputList, setInputList] = useState("");
-  const [selectedItemId,setSelectedItemId]= useState(null); 
+  const [selectedItemId, setSelectedItemId] = useState([]); // non e piu null, lo tratiamo come un array
 
   function handleClick() {
-    setShoppinglist([...shoppingList, { id: crypto.randomUUID(), list: inputList }]);
+    setShoppinglist([
+      ...shoppingList,
+      { id: crypto.randomUUID(), list: inputList },
+    ]);
     setInputList("");
+  }
+
+  function toggleItemSelection(id) {
+    setSelectedItemId(
+      (prevSelected) =>
+        prevSelected.includes(id)
+          ? prevSelected.filter((itemId) => itemId !== id) //si gia essite lo toglie
+          : [...prevSelected, id] //se non lo trova lo aggiunge
+    );
   }
 
   return (
@@ -22,10 +34,14 @@ function App() {
       <Input inputList={inputList} setInputList={setInputList} />
       <BtnAdd handleClick={handleClick} />
 
-      <List shoppingList={shoppingList} 
-      onClickRemove={(item)=>setShoppinglist(shoppingList.filter(i=>i.id!==item))}
-      setSelectedItemId={setSelectedItemId}
-      selectedItemId={selectedItemId}
+      <List
+        shoppingList={shoppingList}
+        onClickRemove={(item) =>
+          setShoppinglist(shoppingList.filter((i) => i.id !== item))
+        }
+        setSelectedItemId={(id) => setSelectedItemId(id)}
+        toggleItemSelection={toggleItemSelection}
+        selectedItemId={selectedItemId}
       />
     </>
   );
