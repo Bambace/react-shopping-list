@@ -11,6 +11,9 @@ function App() {
   const [selectedItemId, setSelectedItemId] = useState([]); // non e piu null, lo tratiamo come un array
 
   function handleClick() {
+    if(inputList.trim() ==="") {
+      return;
+    }
     setShoppinglist([
       ...shoppingList,
       { id: crypto.randomUUID(), list: inputList },
@@ -30,9 +33,9 @@ function App() {
   return (
     <>
       <h1>Shopping list:</h1>
-
+    
       <Input inputList={inputList} setInputList={setInputList} />
-      <BtnAdd handleClick={handleClick} />
+      <BtnAdd handleClick={handleClick} inputList={inputList} />
 
       <List
         shoppingList={shoppingList}
@@ -42,6 +45,7 @@ function App() {
         setSelectedItemId={(id) => setSelectedItemId(id)}
         toggleItemSelection={toggleItemSelection}
         selectedItemId={selectedItemId}
+        
       />
     </>
   );

@@ -6,6 +6,7 @@ ul{
     margin-right: auto;
     row-gap: 10px;
     padding: 10px;
+    list-style-type: none; /* Quita los puntos de la lista */
     
 }
 
