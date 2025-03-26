@@ -64,6 +64,7 @@ li {
     color: white;
     font-weight: bold;
     text-decoration: line-through;
+    text-decoration-color: black;
     
   }
 
