@@ -22,6 +22,14 @@ function App() {
   }
 
   function toggleItemSelection(id) {
+    //if(selectedItemId.incluides(id)){
+    //setSelectedItemId(selectedItemId.filter(s => s!==id))}
+    //else{
+    //setSelectedItemId([...selectedItemId,id])}
+    
+
+
+     
     setSelectedItemId(
       (prevSelected) =>
         prevSelected.includes(id) // include verifica si el id esta dentro del elemento
