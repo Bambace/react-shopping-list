@@ -9,7 +9,7 @@ function App() {
   const [shoppingList, setShoppinglist] = useState([]);
   const [inputList, setInputList] = useState("");
   const [selectedItemId, setSelectedItemId] = useState([]); // non e piu null, lo tratiamo come un array
-
+  const [editItem,setEditItem]= useState('')
   function handleClick() {
     if(inputList.trim() ==="") {
       return;
@@ -24,10 +24,13 @@ function App() {
   function toggleItemSelection(id) {
     setSelectedItemId(
       (prevSelected) =>
-        prevSelected.includes(id)
+        prevSelected.includes(id) // include verifica si el id esta dentro del elemento
           ? prevSelected.filter((itemId) => itemId !== id) //si gia essite lo toglie
           : [...prevSelected, id] //se non lo trova lo aggiunge
     );
+  }
+
+  function editShoppingList( ){
   }
 
   return (
@@ -45,6 +48,10 @@ function App() {
         setSelectedItemId={(id) => setSelectedItemId(id)}
         toggleItemSelection={toggleItemSelection}
         selectedItemId={selectedItemId}
+
+
+        setEditItem={(id)=>setEditItem(id)}
+        editItem={editItem}
         
       />
     </>

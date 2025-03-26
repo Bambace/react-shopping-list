@@ -5,6 +5,8 @@
     background-color: black ;
     color: white;
     border-radius: 14px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .remove:hover{

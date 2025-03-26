@@ -1,8 +1,9 @@
 import './List.css'
 import BtnConfirm from '../BtnConfirm/BtnConfirm'
  import BtnRemove from '../BtnRemove/BtnRemove'
+import BtnEdit from '../BtnEdit/BtnEdit'
 
- export default function List({shoppingList,onClickRemove,setSelectedItemId,selectedItemId,toggleItemSelection}) {
+ export default function List({shoppingList,onClickRemove,setSelectedItemId,selectedItemId,toggleItemSelection,editItem,setEditItem}) {
    return (
      <>
     
@@ -12,7 +13,7 @@ import BtnConfirm from '../BtnConfirm/BtnConfirm'
                  <li >{item.list}
                   <div className='button-group'>
                   <BtnConfirm  item={item.id} setSelectedItemId={setSelectedItemId}  selectedItemId={selectedItemId} toggleItemSelection={toggleItemSelection}/> 
-
+                  <BtnEdit item={item.id} setEditItem={setEditItem}/>
                   <BtnRemove onClickRemove={onClickRemove} item={item.id} /> 
                   </div>
                   </li>
