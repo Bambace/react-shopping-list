@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-
 import List from "./components/List/List";
 import BtnAdd from "./components/BtnAdd/BtnAdd";
 import Input from "./components/Input/Input";
@@ -38,8 +37,7 @@ function App() {
     );
   }
 
-  function editShoppingList( ){
-  }
+
 
   return (
     <>
@@ -58,8 +56,7 @@ function App() {
         selectedItemId={selectedItemId}
 
 
-        setEditItem={(id)=>setEditItem(id)}
-        editItem={editItem}
+
         
       />
     </>
